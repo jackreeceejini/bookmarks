@@ -4,3 +4,5 @@
 *.jpg
 *.png
 settings.json
+cert.crt
+cert.key

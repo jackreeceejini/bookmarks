@@ -26,7 +26,7 @@ SECRET_KEY = '95-q4ql4e^s93tt^0%jqksk0d%*3j*@@xf7-y_bq5))ha)i*pm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -143,4 +145,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+#Auth keys
+
+SOCIAL_AUTH_TWITTER_KEY = "9hqqnnQscmQap19lpBXBknr7n"
+SOCIAL_AUTH_TWITTER_SECRET = "L0kZHaIlrRhIlam5G6wqp9Ij4uvjV3vMh2pVNgfijYLDN0fLAf"
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "3625208472-ptds0lper36id6uv1i605703sdma8mhc.apps.googleusercontent.com" #Google consumer key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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" # Google consumer secret
