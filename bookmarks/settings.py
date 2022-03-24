@@ -151,8 +151,8 @@ AUTHENTICATION_BACKENDS = [
 
 #Auth keys
 
-SOCIAL_AUTH_TWITTER_KEY = "9hqqnnQscmQap19lpBXBknr7n"
-SOCIAL_AUTH_TWITTER_SECRET = "L0kZHaIlrRhIlam5G6wqp9Ij4uvjV3vMh2pVNgfijYLDN0fLAf"
+SOCIAL_AUTH_TWITTER_KEY = "Your twitter key here"
+SOCIAL_AUTH_TWITTER_SECRET = "your twitter secret here"
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "3625208472-ptds0lper36id6uv1i605703sdma8mhc.apps.googleusercontent.com" #Google consumer key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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" # Google consumer secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "you google key here" #Google consumer key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "Your google secret here" # Google consumer secret
