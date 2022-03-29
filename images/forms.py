@@ -4,7 +4,7 @@ from .models import Image
 from urllib import request
 from django.core.files.base import ContentFile 
 from django.utils.text import slugify 
-import ssl
+#import ssl
 class ImageCreateForm(forms.ModelForm):
     class Meta:
         model = Image 
@@ -30,8 +30,8 @@ class ImageCreateForm(forms.ModelForm):
         image_name = f'{name}.{extension}'
 
         # download image from the given URL
-        context = ssl._create_unverified_context()
-        response = request.urlopen(image_url, context=context)
+        #context = ssl._create_unverified_context()
+        response = request.urlopen(image_url)
         image.image.save(image_name, ContentFile(response.read()), save=False)
 
         if commit:
