@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from telnetlib import AUTHENTICATION, LOGOUT
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -158,3 +159,8 @@ SOCIAL_AUTH_TWITTER_SECRET = "your twitter secret here"
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "you google key here" #Google consumer key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "Your google secret here" # Google consumer secret
+
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
