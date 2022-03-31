@@ -7,7 +7,7 @@ from django.utils import timezone
 def create_action(user, verb, target=None):
     # check for any similar action made in the last minute
     now = timezone.now()
-    last_minute = now = datetime.timedelta(seconds=60)
+    last_minute = now - datetime.timedelta(seconds=60)
     similar_actions = Action.objects.filter(user_id=user.id, verb=verb, created__gte=last_minute)
 
     if target:
@@ -18,4 +18,5 @@ def create_action(user, verb, target=None):
         # no existing actions found
         action = Action(user=user, verb=verb, target=target)
         action.save() 
+        return True 
     return False 
